@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\belob\Workshop1\Rough measure\Rough measure\Source.cpp(14,20): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+C:\Users\belob\Workshop1\Rough measure\Rough measure\Source.cpp(21,13): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\belob\Workshop1\Rough measure\Rough measure\Source.cpp(22,18): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Rough measure.vcxproj -> C:\Users\belob\Workshop1\Rough measure\x64\Debug\Rough measure.exe

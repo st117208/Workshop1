@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\belob\Workshop1\Precise measure\Precise measure\Source.cpp(18,16): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+C:\Users\belob\Workshop1\Precise measure\Precise measure\Source.cpp(27,18): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Precise measure.vcxproj -> C:\Users\belob\Workshop1\Precise measure\x64\Debug\Precise measure.exe
