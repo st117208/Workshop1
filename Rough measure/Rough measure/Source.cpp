@@ -1,28 +1,56 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <iomanip>
+
+
+void in (float a[], double n)
+{
+    std::ifstream inF("Rough measuring.csv");
+    for (int i = 0; i < n; i++)
+    {
+        inF >> a[i];
+    }
+}
+
+float fx (float a[], double n)
+{
+    float sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum = sum + a[i];
+    }
+    sum = sum / n;
+    return sum;
+}
+
+float rel (float a[], double n, float T)
+{
+    float rel = (5 * pow(10, -7.0) + (1 / (fx(a, n) * 1000 * T))) * 100;
+    return rel;
+}
+
+float abs (float a[], double n, float T)
+{
+    float abs = rel(a, n, T) * fx(a, n) / 100;
+    return abs;
+}
+
+void out (float a[], double n, float T)
+{
+    std::ofstream outF("Rough result.csv");
+    outF << fx(a, n) << std::endl;
+    outF << std::setprecision(4) << abs(a, n, T) << std::endl;
+}
 
 int main()
 {
-    std::ifstream inputFile("Rough measuring.csv");
-    std::ofstream outputFile("Rough result.csv");
-
     float T = 0.1;
-    float n = 10;
-    float sum = 0.0;
-    double value = 0.0;
-    for (int i = 0; i < n; ++i)
-    {
-        inputFile >> value;
-            sum = sum + value;
-    }
+    int n = 10;
+    float a[10];
 
-    float fx = sum / n;
-    float rel = (5 * pow(10, -7.0) + 1 / (fx * 1000 * T)) * 100;
-    float abs = rel * fx * 1000 / 100;
-
-    outputFile << fx << std::endl;
-    outputFile << abs / 1000 << std::endl;
+    in(a, n);
+    out(a, n, T);
 
     return EXIT_SUCCESS;
 }
